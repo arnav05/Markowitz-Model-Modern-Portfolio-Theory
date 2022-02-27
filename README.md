@@ -25,13 +25,20 @@ NOTE: It's value is always between -1 and +1.
     <0 means negative relationship between variables
 6. Normal Distribution: Probability distribution (gaussian distribution) that is symmetric about the mean,
     showing data near mean are more frequent in occurrence. 
-
+7. Sharpe Ratio: It's a risk return measure. Describes excess return for extra volatility that we endure holding riskier asset (stock).
+S(x) = (r(x) - R(f))/σ(x)
+r(x) = Average rate of return of investment x
+R(f) = Rate of return of risk-free security
+S(x) > 1 is considered to be good.
 
 **Modern Portfolio Theory Recap**
 MPT: Investors can construct optimal portfolios offering maximum possible expected return for level of risk. It's a portfolio optimization model.
 
 1. Assists in selection of most efficient portfolio by considering various possible portfolios of given securities based on expected return (mean) and risk (variance).
 2. Efficient Portfolio: Either highest return for a given risk, for lowest risk for given return.
+
+Return:  (S(t+1)-S(t))/S(t)
+Log daily returns: ln(S(t+1)/S(t))
 
 Mathematical Formulation:
    Stock  Weights in Portfolio
@@ -47,6 +54,25 @@ r(i): return for 'i'th stock based on historical data
 µ(portfolio) = E[Σw(i)r(i)] = Σw(i)E[r(i)] = Σw(i)µ(i)
 In matrix multiplication terms, Σw(i)µ(i) = w(transpose)*µ
 
-
 σ(ij) = E[(r(i)-µ(i))(r(j)-µ(j))] < 0 means 2 stocks move inversely 
 Need to calculate this between every pair. When i=j, variance=covariance
+
+Reduce risk as much as possible. High positive covariance doesn't provide much diversification. Aim of diversification is to eliminate fluctuations in long term. 
+Hence, we need uncorrelated stock.
+
+σ(i)^2 = E[(r(i)-µ(i))^2]
+For calculating variance, we need covariance matrix containing all the covariances of stocks involved in portfolio.
+
+|σ(1)^2..........σ(1n)^2| = Σ 
+|                       |
+|                       |
+.                       .
+.                       .
+|σ(n1)^2..........σ(n)^2|
+
+σ(portfolio)^2 = E[(r(i)-µ(i))^2] = Σ(i)Σ(j)[w(i)w(j)σ(ij)] = w(transpose)Σw
+Higher variance, higher risk.
+
+Monte carlo simulation helps us with making decision.
+
+
