@@ -37,4 +37,4 @@ if __name__ == "__main__":
     optimum = optimize_portfolio(portfolio, p_weights, log_daily_returns)
 
     print_optimal_portfolio(optimum, log_daily_returns)
-    show_optimal_portfolio(optimum, log_daily_returns, means, volatility)
+    show_optimal_portfolio(optimum, log_daily_returns, p_returns, p_volatility)
